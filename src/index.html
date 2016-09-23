@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="stylesheet" type="text/css" href="/css/media-queries.css">
+</head>
+<body>
+	<loader>Loading...</loader>
+	<div ng-app="vcardApp" ng-controller="VcardCtrl" ng-cloak class="ng-cloak">
+		<div class="header">
+			<header id="header" class="container">
+				<hgroup>
+					<h1 id="site-logo"><a href="/">Vitalii Rakytin</a></h1>
+					<h2 id="site-description">about me and my work</h2>
+				</hgroup>
+			</header>
+		</div>
+		<div class="content">
+			<div id="content" class="container">
+				Connect with me:
+				<div class="actions">
+					<a ng-repeat="action in actions" ng-href="{{action.link}}" target="_blank" title="{{action.title}}"><img ng-src="{{action.img}}" alt="{{action.title}}"/> </a>
+				</div>
+				<article ng-view class="post clearfix">
+					Some fruits of my job:
+					<ul class="fruits">
+						<li ng-repeat="fruit in fruits"><a ng-if="!!fruit.link" ng-href="{{fruit.link}}">{{fruit.title}}</a><span ng-if="!fruit.link">{{fruit.title}}</span>&nbsp;-&nbsp;<span class="desc">{{fruit.desc}}</span></li>
+					</ul>
+				</article>
+			</div>
+		</div>
+		<div class="footer">
+			<footer id="footer" class="container">
+				<div class="ft-inner">
+					<div class="col-md-6">© 2016 Vitalii Rakytin</div>
+				</div>
+			</footer>
+		</div>
+	</div>
+  	<script src="/bundle.js"></script>
+</body>
+</html>
